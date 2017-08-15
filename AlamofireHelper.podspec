@@ -17,15 +17,14 @@ Pod::Spec.new do |s|
 
   s.name         = "AlamofireHelper"
   s.version      = "2.2.1"
-  s.summary      = "AlamofireHelper is a helper module that allows AlamofireRequest to work with URLRequest natively through multithreaded execution of escaping closures."
+  s.summary      = "AlamofireHelper is a helper module that allows AlamofireRequest to work with URLRequest natively through asynchronous execution of escaping closures. "
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-                   DESC
+s.description  = "Helper Module for Alamofire that fulfills asynchronous request and conforms to Grand Central Dispatch protocol. AFHelper conforms to all Protocol Oriented Programming Protocols to request and fullfill all dispatched tasks correctly and targeted with dedication. Simply Expressed: More Performance, Easy Responses."
 
   s.homepage     = "https://github.com/AlamofireHelper/AlamofireHelper"
   # s.screenshots  = ""
@@ -38,8 +37,8 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  # 3
+  s.license = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -53,8 +52,6 @@ Pod::Spec.new do |s|
   #
 
   s.author             = { "Randall Caliman" => "randocal220@gmail.com" }
-  # Or just: s.author    = "RandallCalliman220"
-  # s.authors            = { "Randall Caliman" => "randocal220@gmail.com" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -66,7 +63,7 @@ Pod::Spec.new do |s|
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
+  s.ios.deployment_target = "8.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
@@ -78,7 +75,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://EXAMPLE/AlamofireHelper.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/AlamofireHelper/AlamofireHelper", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
