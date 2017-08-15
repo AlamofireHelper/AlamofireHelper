@@ -67,7 +67,6 @@
 				D80AB5F71F43B21000C1D3CD /* Alamofire-umbrella.h */,
 				D80AB5FA1F43B21000C1D3CD /* Alamofire.modulemap */,
 				D80AB5FC1F43B21000C1D3CD /* Alamofire.xcconfig */,
-				D8DC8ED31F43A01500A8EC06 /* Info.plist */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -110,6 +109,7 @@
 				D8A619291F43B14000FD1706 /* TaskDelegate.swift */,
 				D8A619271F43B14000FD1706 /* Validation.swift */,
 				D80AB5F61F43B1EB00C1D3CD /* Support Files */,
+				D8DC8ED31F43A01500A8EC06 /* Info.plist */,
 			);
 			path = AlamofireHelper;
 			sourceTree = "<group>";

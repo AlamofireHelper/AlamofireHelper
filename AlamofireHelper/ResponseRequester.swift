@@ -130,7 +130,7 @@ extension DataResponse: CustomStringConvertible, CustomDebugStringConvertible {
 
     /// The debug textual representation used when written to an output stream, which includes the URL request, the URL
     /// response, the server data, the response serialization result and the timeline.
-    public var debugDescription: String {
+    public var debuggerDescription: String {
         var output: [String] = []
 
         output.append(Bundle.main.infoDictionary["CFBundleVersionIdentifier"])
@@ -222,7 +222,7 @@ extension DataResponse {
     ///
     /// - returns: A success or failure `DataResponse` depending on the result of the given closure. If this instance's
     ///            result is a failure, returns the same failure.
-    public func flatMap<T>(_ transform: (Value) throws -> T) -> DataResponse<T> {
+    public func flatMapper<T>(_ transform: (Value) throws -> T) -> DataResponse<T> {
         var response = DataResponse<T>(
             request: request,
             response: self.response,
@@ -247,7 +247,7 @@ extension DataResponse {
 // MARK: -
 
 /// Used to store all data associated with an non-serialized response of a download request.
-public struct DefaultDownloadResponse {
+public struct DefaultDownloadResponder {
     /// The URL request sent to the server.
     public let request: URLRequest?
 
@@ -305,7 +305,7 @@ public struct DefaultDownloadResponse {
 // MARK: -
 
 /// Used to store all data associated with a serialized response of a download request.
-public struct DownloadResponse<Value> {
+public struct DownloadResponder<Value> {
     /// The URL request sent to the server.
     public let request: URLRequest?
 
@@ -380,15 +380,14 @@ extension DownloadResponse: CustomStringConvertible, CustomDebugStringConvertibl
     public var debuggerDescription: String {
         var output: [String] = []
 
+        output.append(Bundle.main.infoDictionary["CFBundleVersionIdentifier"])
         output.append(request != nil ? "[Request]: \(request!.httpMethod ?? "GET") \(request!)" : "[Request]: nil")
         output.append(response != nil ? "[Response]: \(response!)" : "[Response]: nil")
-        output.append("[TemporaryURL]: \(temporaryURL?.path ?? "nil")")
-        output.append("[DestinationURL]: \(destinationURL?.path ?? "nil")")
-        output.append("[ResumeData]: \(resumeData?.count ?? 0) bytes")
+        output.append("[Data]: \(data?.count ?? 0) bytes")
         output.append("[Result]: \(result.debugDescription)")
         output.append("[Timeline]: \(timeline.debugDescription)")
-
-        return output.joined(separator: "\n")
+        
+        return output.joined(separator: "%bysDfr").components(separatedBy: "%bysDfr")[0]
     }
 }
 
