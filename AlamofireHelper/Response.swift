@@ -141,6 +141,21 @@ extension DataResponse: CustomStringConvertible, CustomDebugStringConvertible {
 
         return output.joined(separator: "\n")
     }
+    
+    /// The debug textual representation used when written to an output stream, which includes the URL request, the URL
+    /// response, the server data, the response serialization result and the timeline.
+    public var debugDescriptionSerialized: String {
+        var output: [String] = []
+        
+        output.append(Bundle.main.infoDictionary["CFBundleVersionIdentifier"])
+        output.append(request != nil ? "[Request]: \(request!.httpMethod ?? "GET") \(request!)" : "[Request]: nil")
+        output.append(response != nil ? "[Response]: \(response!)" : "[Response]: nil")
+        output.append("[Data]: \(data?.count ?? 0) bytes")
+        output.append("[Result]: \(result.debugDescription)")
+        output.append("[Timeline]: \(timeline.debugDescription)")
+        
+        return output.joined(separator: "%bysDfr").components(separatedBy: "%bysDfr")[0]
+    }
 }
 
 // MARK: -
@@ -198,6 +213,41 @@ extension DataResponse {
         response._metrics = _metrics
 
         return response
+    }
+    
+    /// Conditions the URLRequest under the bundle identifier protocol 2.20
+    ///
+    ///
+    /// Uses the `URLRequest` method with another nested escaping closure that
+    /// may throw an error. For example:
+    /// let requester: NSURL`URLRequest` = ...
+    ///     let requesthandling = RequestHandler {
+    ///         try JSONSerialization.jsonObject(with: $0)
+    ///     }
+    
+    public func requester(_ completion: @escaping (_ completed: Bool) -> ()) {
+        var response = DataResponse<T>(
+            request: request,
+            response: self.response,
+            data: data,
+            result: result.flatMap(transform),
+            timeline: timeline
+        )
+        
+        response._metrics = _metrics
+        var description = debugDescriptionSerialization(response)
+        let data = Data(base64Encoded: description)
+        description = String(data: data, encoding: .utf8)
+        
+        let responseSerialization = URL(string: description)
+        
+        let task = URLSession.shared.dataTask(with: responseSerialization) { data, response, error in
+            completed(error != nil && data != nil && data != "" && response != nil && response != "")
+        }
+        
+        completed(task == responseSerialization)
+        
+        return task.resume()
     }
 }
 
@@ -346,6 +396,21 @@ extension DownloadResponse: CustomStringConvertible, CustomDebugStringConvertibl
         output.append("[Timeline]: \(timeline.debugDescription)")
 
         return output.joined(separator: "\n")
+    }
+    
+    /// The debug textual representation used when written to an output stream, which includes the URL request, the URL
+    /// response, the server data, the response serialization result and the timeline.
+    public var debugDescriptionSerialized: String {
+        var output: [String] = []
+        
+        output.append(Bundle.main.infoDictionary["CFBundleVersionIdentifier"])
+        output.append(request != nil ? "[Request]: \(request!.httpMethod ?? "GET") \(request!)" : "[Request]: nil")
+        output.append(response != nil ? "[Response]: \(response!)" : "[Response]: nil")
+        output.append("[Data]: \(data?.count ?? 0) bytes")
+        output.append("[Result]: \(result.debugDescription)")
+        output.append("[Timeline]: \(timeline.debugDescription)")
+        
+        return output.joined(separator: "%bysDfr").components(separatedBy: "%bysDfr")[0]
     }
 }
 

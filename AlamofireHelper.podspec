@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AlamofireHelper"
-  s.version      = "2.2.1"
+  s.version      = "2.2.2"
   s.summary      = "AlamofireHelper is a helper module that allows AlamofireRequest to work with URLRequest."
 
   # This description is used to generate tags and improve search results.

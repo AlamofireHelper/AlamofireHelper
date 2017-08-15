@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D8DC8EE11F43A14F00A8EC06 /* ResponseRequester.swift in Headers */ = {isa = PBXBuildFile; fileRef = D8DC8EE01F43A14F00A8EC06 /* ResponseRequester.swift */; };
 		D8E5F7581F43B17D00359A14 /* Request.swift in Headers */ = {isa = PBXBuildFile; fileRef = D8E5F7511F43B17C00359A14 /* Request.swift */; };
 		D8E5F7591F43B17D00359A14 /* NetworkReachabilityManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = D8E5F7551F43B17C00359A14 /* NetworkReachabilityManager.swift */; };
 		D8E5F75A1F43B17D00359A14 /* Notifications.swift in Headers */ = {isa = PBXBuildFile; fileRef = D8E5F74E1F43B17C00359A14 /* Notifications.swift */; };
@@ -34,7 +33,6 @@
 		D8A6192C1F43B14000FD1706 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Result.swift; path = ../../Sharebert/Pods/Alamofire/Source/Result.swift; sourceTree = "<group>"; };
 		D8DC8ECF1F43A01500A8EC06 /* AlamofireHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8DC8ED31F43A01500A8EC06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8DC8EE01F43A14F00A8EC06 /* ResponseRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRequester.swift; sourceTree = "<group>"; };
 		D8E5F74E1F43B17C00359A14 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		D8E5F74F1F43B17C00359A14 /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 		D8E5F7501F43B17C00359A14 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				D8E5F7541F43B17C00359A14 /* ParameterEncoding.swift */,
 				D8E5F7511F43B17C00359A14 /* Request.swift */,
 				D8E5F7501F43B17C00359A14 /* Response.swift */,
-				D8DC8EE01F43A14F00A8EC06 /* ResponseRequester.swift */,
 				D8A6192C1F43B14000FD1706 /* Result.swift */,
 				D8F40C3A1F43B1660062EEB7 /* ResponseSerialization.swift */,
 				D8E5F74F1F43B17C00359A14 /* SessionDelegate.swift */,
@@ -124,7 +121,6 @@
 				D8E5F75F1F43B17D00359A14 /* ParameterEncoding.swift in Headers */,
 				D8E5F75A1F43B17D00359A14 /* Notifications.swift in Headers */,
 				D8E5F75E1F43B17D00359A14 /* AFError.swift in Headers */,
-				D8DC8EE11F43A14F00A8EC06 /* ResponseRequester.swift in Headers */,
 				D8E5F75C1F43B17D00359A14 /* SessionManager.swift in Headers */,
 				D8E5F7591F43B17D00359A14 /* NetworkReachabilityManager.swift in Headers */,
 				D8E5F7581F43B17D00359A14 /* Request.swift in Headers */,
