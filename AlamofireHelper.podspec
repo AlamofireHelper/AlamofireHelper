@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "AlamofireHelper"
   s.version      = "2.2.1"
-  s.summary      = "AlamofireHelper is a helper module that allows AlamofireRequest to work with URLRequest natively through asynchronous execution of escaping closures. "
+  s.summary      = "AlamofireHelper is a helper module that allows AlamofireRequest to work with URLRequest."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
 s.description  = "Helper Module for Alamofire that fulfills asynchronous request and conforms to Grand Central Dispatch protocol. AFHelper conforms to all Protocol Oriented Programming Protocols to request and fullfill all dispatched tasks correctly and targeted with dedication. Simply Expressed: More Performance, Easy Responses."
 
-  s.homepage     = "https://github.com/AlamofireHelper/AlamofireHelper"
+  s.homepage     = "https://github.com/AlamofireHelper/AlamofireHelper.git"
   # s.screenshots  = ""
 
 
@@ -75,7 +75,7 @@ s.description  = "Helper Module for Alamofire that fulfills asynchronous request
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/AlamofireHelper/AlamofireHelper", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/AlamofireHelper/AlamofireHelper.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -86,8 +86,7 @@ s.description  = "Helper Module for Alamofire that fulfills asynchronous request
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m,swift}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "AlamofireHelper/**/*.{swift}"
 
   # s.public_header_files = "Classes/**/*.h"
 
